@@ -28,6 +28,9 @@
         font-size: 23px;
         text-align: center;
     }
+    .Header{
+        height: 15vh;
+    }
 
 }
 @keyframes opacity{
