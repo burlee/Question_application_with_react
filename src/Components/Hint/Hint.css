@@ -1,0 +1,37 @@
+.Hint{
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #4c4c4c;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Hint i{
+    font-size: 30px;
+    content: "\f059";
+    color: #f7e018;
+}
+
+.HintDescription{
+    width: 250px;
+    height: 250px;
+    background: #4c4c4c;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 3px;
+}
+.HintDescription p{
+    text-align: justify;
+    text-align-last: center;
+    font-size: 13px;
+    padding: 15px;
+    box-sizing: border-box;
+}

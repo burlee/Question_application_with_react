@@ -6,4 +6,5 @@ body {
   height: 100vh;
   position: absolute;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }

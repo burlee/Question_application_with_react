@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 import Aux from '../../HOC/aux_x';
 import classes from './Quiz.css';
+import Hint from '../Hint/Hint';
 
 export default class Quiz extends Component {
     state = {
@@ -148,6 +149,7 @@ export default class Quiz extends Component {
         return (
             <Aux>
                 {questions}
+                <Hint/>
             </Aux>
         )
     }
