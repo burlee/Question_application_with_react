@@ -1,6 +1,6 @@
 .QuestionBox{
     margin: 15px;
-    box-shadow: 0px 1px 15px #4c4c4c;
+    box-shadow: 0px 1px 8px #4c4c4c9e;
     background: none;
     width: 90%;
     height: 40vh;
@@ -8,10 +8,23 @@
     border-radius: 3px;
     display: flex;
     flex-direction: column;
+    animation-name: fadeInRight;
+    animation-duration: 1s;
 }
 .QuestionBox h5{
     margin: 0;
     text-align: center;
+    font-size: 20px;
+    color: #4c4c4c;
+    font-weight: 500;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.QuestionBox h4{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4c4c4c;
 }
 .QuestionBox p{
     cursor: pointer;
@@ -22,10 +35,71 @@
     margin-top: 5px;
 }
 .QuestionBox button{
+    background: rgb(245, 222, 25, .9);
+    color: #4c4c4c;
     height: 40px;
-    color: green;
     border: none;
     outline: none;
     cursor: pointer;
     margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border-radius: 1px;
+    transition: all .4s ease-in-out;
 }
+
+.QuestionBox button:hover{
+    background: rgb(76, 76, 76, .9);
+    color: rgb(245, 222, 25, .9);
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border-radius: 1px;
+}
+
+@media screen and (max-width: 486px) {
+    .QuestionBox{
+        height: 50vh;
+    }
+    .QuestionBox h5{
+        font-size: 13px;
+    }
+
+}
+@-webkit-keyframes fadeInRight {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  

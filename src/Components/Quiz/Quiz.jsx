@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import uuid from 'uuid'
-import classes from './Quiz.css'
+import uuid from 'uuid';
 import Aux from '../../HOC/aux_x';
+import classes from './Quiz.css';
 
 export default class Quiz extends Component {
     state = {
         questions: [
             {
                 id: uuid(),
-                question: "1",
-                correctlyAnswer: "false",
-                badAnswer_1: "true",
-                badAnswer_2: "unknown"
+                question: "Jaka jest różnica pomiędzy === a == ?",
+                correctlyAnswer: "== nie porównuje typu danych, a === porównuje dane oraz dodatkowo typy",
+                badAnswer_1: "Nie ma różnicy",
+                badAnswer_2: "=== nie porównuje typów danych, a == porównuje"
             },
             {
                 id: uuid(),
-                question: "2",
+                question: "2dsadsadasdsadsa",
                 badAnswer_1: "true",
                 badAnswer_2: "unknown",
                 correctlyAnswer_v2: "V2"
@@ -63,11 +63,6 @@ export default class Quiz extends Component {
         currentClickedBtnID: '',
         badAnswer: false
     }
-
-    componentDidMount(){
-        let arrayV1 = [...this.state.questions];
-    }
-
     
     validationAnswer = (clickedBtn) => {
         console.log("Kliknięty : " + clickedBtn);
@@ -90,23 +85,20 @@ export default class Quiz extends Component {
             correctlyAnswers: previousCorrectlyAnswerValue,
             badAnswer: true
         });
-        setTimeout(() => this.setState({badAnswer: false}), 1750);
+        setTimeout(() => this.setState({badAnswer: false}), 1250);
     }
 
     render() {
-
         console.log(this.state.correctlyAnswers)
-        //this.state.clickedBtnList === question.id ? true : false
         let questions = this.state.questions
         .slice(this.state.startSlice , this.state.endSlice)
         .map( question => {
             if(question.correctlyAnswer){
                 return (
                     <div className={classes.QuestionBox} key={question.id}>
-                        <h5>{question.question}</h5>
+                        <h5>Pytanie: {question.question}</h5>
 
                             <button disabled={this.state.currentClickedBtnID === question.id ? true : false} 
-                                style={{color: 'green'}} 
                                 onClick={() => this.validationAnswer(question.id)}>
                                 {question.correctlyAnswer}
                             </button>
@@ -120,38 +112,38 @@ export default class Quiz extends Component {
             if(question.correctlyAnswer_v1){
                 return (
                     <div className={classes.QuestionBox} key={question.id}>
-                        <h5>{question.question}</h5>
-                        <button>{question.badAnswer_1}</button>
+                        <h5>Pytanie: {question.question}</h5>
+                        <button onClick={this.badAnswer}>{question.badAnswer_1}</button>
 
                         <button disabled={this.state.currentClickedBtnID === question.id ? true : false} 
-                                style={{color: 'green'}} 
                                 onClick={() => this.validationAnswer(question.id)}>
                                 {question.correctlyAnswer_v1}
                         </button>
 
-                        <button>{question.badAnswer_2}</button>
+                        <button onClick={this.badAnswer}>{question.badAnswer_2}</button>
+                        {this.state.badAnswer ? <h4>Ta odpowiedź jest nie prawidłowa</h4> : null}
+
                     </div>
                 )
             }
             if(question.correctlyAnswer_v2){
                 return (
                     <div className={classes.QuestionBox} key={question.id}>
-                        <h5>{question.question}</h5>
-                        <button>{question.badAnswer_1}</button>
-                        <button>{question.badAnswer_2}</button>
+                        <h5>Pytanie: {question.question}</h5>
+                        <button onClick={this.badAnswer}>{question.badAnswer_1}</button>
+                        <button onClick={this.badAnswer}>{question.badAnswer_2}</button>
                         
                         <button disabled={this.state.currentClickedBtnID === question.id ? true : false} 
-                                style={{color: 'green'}} 
                                 onClick={() => this.validationAnswer(question.id)}>
                                 {question.correctlyAnswer_v2}
                         </button>
+                        {this.state.badAnswer ? <h4>Ta odpowiedź jest nie prawidłowa</h4> : null}
 
                     </div>
                 )
             }
+            return true;
         });
-
-
 
         return (
             <Aux>
