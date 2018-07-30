@@ -3,9 +3,11 @@
     box-shadow: 0px 1px 15px #4c4c4c;
     background: none;
     width: 90%;
-    height: 20vh;
+    height: 40vh;
     padding: 15px;
     border-radius: 3px;
+    display: flex;
+    flex-direction: column;
 }
 .QuestionBox h5{
     margin: 0;
@@ -18,4 +20,12 @@
     box-sizing: border-box;
     border: 1px solid #4c4c4c;
     margin-top: 5px;
+}
+.QuestionBox button{
+    height: 40px;
+    color: green;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 5px;
 }
