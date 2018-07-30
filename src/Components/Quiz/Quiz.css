@@ -100,11 +100,15 @@
     .QuestionBox h5{
         font-size: 13px;
     }
+    .QuestionBox h4{
+        font-size: 12px;
+    }
     .QuestionBox button{
-        height: 60px;
+        transition: none;
+        height: 55px;
     }
     .QuestionBox button:hover{
-        height: 60px;
+        height: 55px;
     }
 }
 @-webkit-keyframes fadeInRight {
