@@ -3,7 +3,7 @@
     box-shadow: 0px 1px 8px #4c4c4c9e;
     background: none;
     width: 90%;
-    height: 40vh;
+    height: 42vh;
     padding: 15px;
     border-radius: 3px;
     display: flex;
@@ -16,7 +16,7 @@
     box-shadow: 0px 1px 8px #4c4c4c9e;
     background: none;
     width: 90%;
-    height: 40vh;
+    height: 42vh;
     padding: 15px;
     border-radius: 3px;
     display: flex;
@@ -24,6 +24,13 @@
     flex-direction: column;
     animation-name: fadeInRight;
     animation-duration: 1s;
+}
+.QuestionBoxEnd button{
+    border: none;
+    color: #4c4c4c;
+    background: none;
+    outline: none;
+    cursor: pointer;
 }
 .QuestionBoxEnd h5{
     margin: 0;
@@ -45,6 +52,7 @@
     box-sizing: border-box;
 }
 .QuestionBox h4{
+    margin-top: 30px;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
