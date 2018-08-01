@@ -60,6 +60,13 @@ export default{
         },
         {
             id: uuid(),
+            question: "Czym jest referencja w języku JavaScript",
+            badAnswer_1: "Typem prymitywnym",
+            correctlyAnswer_v1: "Odnośnikiem do miejsca w pamięci",
+            badAnswer_2: "Kopią wartości zmiennej"
+        },
+        {
+            id: uuid(),
             question: "Dobrym miejscem na umieszczanie skryptów JavaScript jest:",
             correctlyAnswer: "Sekcja <body>",
             badAnswer_1: "Pomiędzy znaczniem <title></title>",

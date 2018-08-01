@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import classes from './Hint.css';
 
 
-export default class Hint extends Component {
+export default class Hint extends PureComponent {
     state = {
         showHintToggle: false
     }
@@ -12,6 +12,7 @@ export default class Hint extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div onClick={this.showHintToggle} className={classes.Hint}>
                 <i className="far fa-question-circle"></i>
@@ -19,7 +20,8 @@ export default class Hint extends Component {
                 <div className={classes.HintDescription}>
                     <p>
                         Sprawdź swoją wiedzę z zakresu języka JavaScript.
-                        Zostaną dla Ciebie wyświetlone pytania, jesli się pomylisz w swojej odpowiedźi zostanie Ci naliczony punkt karny, czym więcej punktow karnych tym bardziej musisz przyłożyć się do nauki.
+                        Przejdź przez {this.props.questionCounter} pytań i sprawdź ile błędów popełniłeś.
+                        Każda błędna odpowiedź wiążę się z punktem karnym, im więcej punktów karnych tym gorzej.
                     </p>
                     <button onClick={this.showHintToggle}>Zamknij</button>
                 </div> : null

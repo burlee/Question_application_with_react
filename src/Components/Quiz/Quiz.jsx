@@ -12,10 +12,14 @@ export default class Quiz extends Component {
         startSlice: 0,
         endSlice: 1,
         currentClickedBtnID: '',
-        badAnswer: false
+        badAnswer: false,
+        questionDisplay: 1
     }
     
     validationAnswer = (clickedBtn) => {        
+
+        const questionVal = this.state.questionDisplay;
+
         const previousCorrectlyAnswerValue = this.state.points + 1;
         const startSlice = this.state.startSlice;
         const endSlice = this.state.endSlice;
@@ -23,7 +27,8 @@ export default class Quiz extends Component {
             points: previousCorrectlyAnswerValue,
             currentClickedBtnID: clickedBtn,
             startSlice: startSlice + 1,
-            endSlice: endSlice + 1
+            endSlice: endSlice + 1,
+            questionDisplay: questionVal + 1
         });
     }
 
@@ -45,7 +50,7 @@ export default class Quiz extends Component {
             if(question.correctlyAnswer){
                 return (
                     <div className={classes.QuestionBox} key={question.id}>
-                        <h5>Pytanie: {question.question}</h5>
+                        <h5>Pytanie {this.state.questionDisplay}: {question.question}</h5>
 
                             <button disabled={this.state.currentClickedBtnID === question.id ? true : false} 
                                 onClick={() => this.validationAnswer(question.id)}>
@@ -61,7 +66,7 @@ export default class Quiz extends Component {
             if(question.correctlyAnswer_v1){
                 return (
                     <div className={classes.QuestionBox} key={question.id}>
-                        <h5>Pytanie: {question.question}</h5>
+                        <h5>Pytanie {this.state.questionDisplay}: {question.question}</h5>
                         <button onClick={this.badAnswer}>{question.badAnswer_1}</button>
 
                         <button disabled={this.state.currentClickedBtnID === question.id ? true : false} 
@@ -78,7 +83,7 @@ export default class Quiz extends Component {
             if(question.correctlyAnswer_v2){
                 return (
                     <div className={classes.QuestionBox} key={question.id}>
-                        <h5>Pytanie: {question.question}</h5>
+                        <h5>Pytanie {this.state.questionDisplay}: {question.question}</h5>
                         <button onClick={this.badAnswer}>{question.badAnswer_1}</button>
                         <button onClick={this.badAnswer}>{question.badAnswer_2}</button>
                         
@@ -105,7 +110,7 @@ export default class Quiz extends Component {
         return (
             <Aux>
                 {questions}
-                <Hint/>
+                <Hint questionCounter={this.state.questions.questions.length}/>
             </Aux>
         )
     }
