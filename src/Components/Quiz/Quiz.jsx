@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import questionPackage from '../../Data/Questions.js';
 import Aux from '../../HOC/aux_x';
 import Hint from '../Hint/Hint';
@@ -43,8 +42,9 @@ export default class Quiz extends Component {
     pageReload = () => {
         window.location.reload();
     }
+
     render() {
-        let questions = this.state.questions.questions
+        let questions = this.state.questions.questionsList
         .slice(this.state.startSlice , this.state.endSlice)
         .map( question => {
             if(question.correctlyAnswer){
@@ -99,7 +99,7 @@ export default class Quiz extends Component {
             if(question.testEndMessage){
                 return (
                     <div className={classes.QuestionBoxEnd} key={question.id}>
-                        <h5>{question.testEndMessage}{this.state.points - this.state.questions.questions.length + 1} błędnych odpowiedzi na {this.state.questions.questions.length-1} pytań.</h5>
+                        <h5>{question.testEndMessage}{this.state.points - this.state.questions.questionsList.length + 1} błędnych odpowiedzi na {this.state.questions.questionsList.length-1} pytań.</h5>
                         <button onClick={this.pageReload}>Spróbuj ponownie</button>
                     </div>
                 )
@@ -110,7 +110,7 @@ export default class Quiz extends Component {
         return (
             <Aux>
                 {questions}
-                <Hint questionCounter={this.state.questions.questions.length}/>
+                <Hint questionCounter={this.state.questions.questionsList.length}/>
             </Aux>
         )
     }

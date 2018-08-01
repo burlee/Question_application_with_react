@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 
 export default{
-    questions: [
+    questionsList: [
         {
             id: uuid(),
             question: "Czym jest Closures?",
@@ -74,10 +74,31 @@ export default{
         },
         {
             id: uuid(),
+            question: "NaN === NaN",
+            badAnswer_1: "true",
+            correctlyAnswer_v1: "false",
+            badAnswer_2: "NaN"
+        },
+        {
+            id: uuid(),
             question: "Efektem działania kodu console.log('5' !== 5) będzie:",
             badAnswer_1: "False",
             badAnswer_2: "Undefined",
             correctlyAnswer_v2: "True"
+        },
+        {
+            id: uuid(),
+            question: "Co zostanie wyświetlone: const numbers = [1,3,13,11,16,15,30].sort(); console.log(array)",
+            correctlyAnswer: "[1, 11, 13, 15, 16, 3, 30]",
+            badAnswer_1: "[1, 3, 11, 13, 15, 16, 30]",
+            badAnswer_2: "[30, 16, 15, 13, 11, 3, 1]"
+        },
+        {
+            id: uuid(),
+            question: "Co zostanie wyświetlone w konsoli? let x = [1,2,3] + [3,4,5]; console.log(x)",
+            badAnswer_1: "[1,2,3,4,5,6]",
+            correctlyAnswer_v1: "[1,2,34,5,6]",
+            badAnswer_2: "NaN"
         },
         {
             id: uuid(),
