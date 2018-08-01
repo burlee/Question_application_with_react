@@ -99,7 +99,7 @@ export default class Quiz extends Component {
             if(question.testEndMessage){
                 return (
                     <div className={classes.QuestionBoxEnd} key={question.id}>
-                        <h5>{question.testEndMessage}{this.state.points - this.state.questions.questions.length + 1} błędnych odpowiedzi na {this.state.questions.questions.length} pytań.</h5>
+                        <h5>{question.testEndMessage}{this.state.points - this.state.questions.questions.length + 1} błędnych odpowiedzi na {this.state.questions.questions.length-1} pytań.</h5>
                         <button onClick={this.pageReload}>Spróbuj ponownie</button>
                     </div>
                 )
